@@ -5,7 +5,7 @@ import 'package:neuro_dashboard/features/book/presenter/controllers/book_control
 import 'package:page_manager/export_manager.dart';
 
 class CreatedBookPage extends StatefulWidget {
-  static const route = '/created_book';
+  static const route = '/created-book';
   const CreatedBookPage({super.key});
 
   @override

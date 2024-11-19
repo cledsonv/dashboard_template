@@ -2,12 +2,12 @@ import 'package:neuro_dashboard/core/global/global_variables.dart';
 import 'package:neuro_dashboard/core/library/api_client.dart';
 import 'package:neuro_dashboard/core/services/api/api_response.dart';
 
-class ApiRecipes {
+class ApiNeuro {
   final ApiClient _apiClient;
   final ApiResponseParser _apiResponse;
   // final AuthService _authService;
 
-  const ApiRecipes(
+  const ApiNeuro(
     this._apiClient,
     this._apiResponse,
     //this._authService
@@ -16,7 +16,7 @@ class ApiRecipes {
   Future<Map<String, dynamic>> _apiHeader() async {
     // await _authService.refreshToken();
     return {
-      'Authorization': Global.token,
+      'Authorization': 'Bearer ${Global.token}',
     };
   }
 

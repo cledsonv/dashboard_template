@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:neuro_dashboard/core/utils/template/default_page_template.dart';
 import 'package:neuro_dashboard/core/utils/widgets/neuro_text.dart';
 import 'package:neuro_dashboard/features/book/presenter/controllers/book_controller.dart';
+import 'package:neuro_dashboard/features/book/presenter/ui/pages/created_book_page.dart';
 import 'package:page_manager/export_manager.dart';
 
 class AllBookPage extends StatefulWidget {
@@ -21,7 +23,7 @@ class _AllBookPageState extends ManagerPage<BookController, AllBookPage> {
       appBar: const Text('Livros'),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          // await ct.saveBook();
+          context.pushNamed(CreatedBookPage.route);
         },
         child: const Icon(Icons.add),
       ),
@@ -67,6 +69,7 @@ class _AllBookPageState extends ManagerPage<BookController, AllBookPage> {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         NeuroText(
                           text: book.title,
