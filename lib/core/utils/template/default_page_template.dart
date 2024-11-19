@@ -11,6 +11,7 @@ class DefaultPageTemplate extends StatelessWidget {
   final Widget appBar;
   final Widget? bottomNavigationBar;
   final Widget? drawer;
+  final FloatingActionButton? floatingActionButton;
   const DefaultPageTemplate({
     super.key,
     required this.pageDone,
@@ -20,6 +21,7 @@ class DefaultPageTemplate extends StatelessWidget {
     required this.appBar,
     this.bottomNavigationBar,
     this.drawer,
+    this.floatingActionButton,
   });
 
   @override
@@ -29,6 +31,7 @@ class DefaultPageTemplate extends StatelessWidget {
       pageDone: pageDone,
       error: error,
       drawer: drawer,
+      floatingActionButton: floatingActionButton,
       padding: const EdgeInsets.all(17),
       pageInitial: pageInitial ??
           () => const Center(

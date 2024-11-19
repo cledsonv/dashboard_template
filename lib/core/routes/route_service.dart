@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:neuro_dashboard/core/routes/register_module.dart';
 import 'package:neuro_dashboard/features/auth/auth_module.dart';
+import 'package:neuro_dashboard/features/book/book_module.dart';
 import 'package:neuro_dashboard/features/home/home_module.dart';
 import 'package:neuro_dashboard/features/splash/splash_module.dart';
 
@@ -22,6 +23,7 @@ class ServiceRoute {
     SplashModule(),
     AuthModule(),
     HomeModule(),
+    BookModule(),
   ];
 
   // Future<void> initialize() async {

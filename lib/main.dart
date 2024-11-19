@@ -3,6 +3,7 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:go_router/go_router.dart';
 import 'package:neuro_dashboard/core/core_module.dart';
 import 'package:neuro_dashboard/core/routes/route_service.dart';
+import 'package:neuro_dashboard/core/themes/theme_app.dart';
 
 void main() {
   CoreModule().register();
@@ -20,10 +21,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Dashboard',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: lightTheme,
+      darkTheme: darkTheme,
       routerConfig: ServiceRoute.of.routers,
     );
   }
