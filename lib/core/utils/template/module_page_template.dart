@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:neuro_dashboard/core/utils/pages/error_default_page.dart';
 import 'package:neuro_dashboard/core/utils/pages/logout_page.dart';
 import 'package:neuro_dashboard/core/utils/widgets/neuro_drawer_menu.dart';
+import 'package:neuro_dashboard/core/utils/widgets/neuro_text.dart';
 import 'package:page_manager/export_manager.dart';
 
 class ModuloPageTemplate extends StatelessWidget {
   final String route;
+  final String title;
   final StateManager state;
-  final String? labelNovoItem;
   final List? listaItems;
   final Widget? child;
   final Object? error;
@@ -19,11 +20,11 @@ class ModuloPageTemplate extends StatelessWidget {
     required this.route,
     required this.state,
     required this.error,
-    this.labelNovoItem,
     this.listaItems,
     this.child,
     this.onPressedRefresh,
     this.floatingActionButton,
+    required this.title,
   });
 
   @override
@@ -44,8 +45,14 @@ class ModuloPageTemplate extends StatelessWidget {
       pageMaintenance: () => const ErrorDefaultPage(),
       error: error,
       drawer: width <= 1000 ? NeuroDrawerMenu(atual: route) : null,
-      appBar:
-          width <= 1000 ? AppBar(title: Text(route.replaceAll('/', ''))) : null,
+      appBar: width <= 1000
+          ? AppBar(
+              title: NeuroText(
+                text: title,
+                typography: NeuroTypography.title,
+              ),
+            )
+          : null,
       floatingActionButton: floatingActionButton,
       pageDone: () => Row(
         mainAxisSize: MainAxisSize.min,

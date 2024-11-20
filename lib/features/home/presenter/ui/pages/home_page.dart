@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neuro_dashboard/core/utils/menu_item_enum.dart';
 import 'package:neuro_dashboard/core/utils/template/module_page_template.dart';
 import 'package:neuro_dashboard/core/utils/widgets/neuro_text.dart';
 import 'package:neuro_dashboard/features/home/presenter/controllers/home_controller.dart';
@@ -19,6 +20,7 @@ class _HomePageState extends ManagerPage<HomeController, HomePage> {
       route: HomePage.route,
       state: ct.state,
       error: ct.error,
+      title: MenuItemEnum.home.title,
       child: const Center(
         child: NeuroText(text: 'Home Page'),
       ),

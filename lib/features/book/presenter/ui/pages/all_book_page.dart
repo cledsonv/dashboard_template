@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart'; 
+import 'package:go_router/go_router.dart';
+import 'package:neuro_dashboard/core/utils/menu_item_enum.dart';
 import 'package:neuro_dashboard/core/utils/template/module_page_template.dart';
 import 'package:neuro_dashboard/core/utils/widgets/neuro_text.dart';
 import 'package:neuro_dashboard/features/book/presenter/controllers/book_controller.dart';
@@ -20,6 +21,7 @@ class _AllBookPageState extends ManagerPage<BookController, AllBookPage> {
     return ModuloPageTemplate(
       state: ct.state,
       error: ct.error,
+      title: MenuItemEnum.book.title,
       route: AllBookPage.route,
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
@@ -43,7 +45,8 @@ class _AllBookPageState extends ManagerPage<BookController, AllBookPage> {
               child: Container(
                 height: 200,
                 margin: const EdgeInsets.only(bottom: 10),
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
