@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:neuro_dashboard/features/auth/presenter/pages/auth_page.dart';
 
 class LogoutPage extends StatelessWidget {
   const LogoutPage({super.key});
@@ -23,8 +24,7 @@ class LogoutPage extends StatelessWidget {
               vertical: 16.0,
             ),
           ),
-          //TODO REFATORAR PARA O LOGIN
-          onPressed: () => context.push('/ath'),
+          onPressed: () => context.push(AuthPage.route),
           icon: const Icon(Icons.add),
           label: const Text('Ir para o Login'),
         ),

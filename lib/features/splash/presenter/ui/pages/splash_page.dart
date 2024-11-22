@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:neuro_dashboard/core/utils/widgets/neuro_text.dart';
 import 'package:neuro_dashboard/features/splash/presenter/controller/splash_controller.dart';
 import 'package:page_manager/export_manager.dart';
@@ -13,6 +14,14 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends ManagerPage<SplashController, SplashPage> {
   @override
+  void initState() {
+    ct.onNavigation(
+      (event) => context.pushReplacement(event),
+    );
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 27, 122, 247),
@@ -23,6 +32,7 @@ class _SplashPageState extends ManagerPage<SplashController, SplashPage> {
               const SizedBox(height: 200),
               Image.asset(
                 'assets/images/logo_splash.png',
+                height: 500,
               ),
               const Spacer(),
               const NeuroText(

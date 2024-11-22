@@ -1,4 +1,5 @@
 abstract class AuthRepository {
-  Future<String> singIn({required String email, required String senha});
+  Future<void> singIn({required String email, required String senha});
+  Future<String> getToken();
   Future<void> logout();
 }

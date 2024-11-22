@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neuro_dashboard/core/utils/pages/error_default_page.dart';
+import 'package:neuro_dashboard/core/utils/pages/logout_page.dart';
 import 'package:page_manager/entities/state_manager.dart';
 import 'package:page_manager/manager_page_builder.dart';
 
@@ -42,7 +43,7 @@ class DefaultPageTemplate extends StatelessWidget {
       pageLoading: () => const Center(
         child: CircularProgressIndicator(),
       ),
-      pageLoggedOut: () => const ErrorDefaultPage(),
+      pageLoggedOut: () => const LogoutPage(),
       pageMaintenance: () => const ErrorDefaultPage(),
       appBar: AppBar(
         title: appBar,

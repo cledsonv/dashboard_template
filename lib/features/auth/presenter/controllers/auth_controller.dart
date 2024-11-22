@@ -16,7 +16,7 @@ class AuthController extends ManagerStore {
 
   Future<void> singIn() => handleTry(
         call: () async {
-          _authRepository.singIn(
+          await _authRepository.singIn(
             email: emailController.text,
             senha: passwordController.text,
           );

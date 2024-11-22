@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:neuro_dashboard/features/home/presenter/ui/pages/home_page.dart';
 
 class ErrorDefaultPage extends StatelessWidget {
   const ErrorDefaultPage({super.key});
@@ -26,7 +27,7 @@ class ErrorDefaultPage extends StatelessWidget {
                   vertical: 12.0,
                 ),
               ),
-              onPressed: () => context.push('/home'),
+              onPressed: () => context.push(HomePage.route),
               icon: const Icon(Icons.home),
               label: const Text('Ir para a Home'),
             ),

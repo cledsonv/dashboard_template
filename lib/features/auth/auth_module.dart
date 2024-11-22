@@ -13,6 +13,7 @@ class AuthModule implements RegisterModule {
     di.registerFactory<AuthRepository>(
       () => AuthRepositoryImp(
         di(),
+        di(),
       ),
     );
 

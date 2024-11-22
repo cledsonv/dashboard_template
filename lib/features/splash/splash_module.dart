@@ -9,7 +9,7 @@ class SplashModule implements RegisterModule {
   void inicialize() {
     //controller
     di.registerFactory<SplashController>(
-      () => SplashController(di()),
+      () => SplashController(),
     );
   }
 
